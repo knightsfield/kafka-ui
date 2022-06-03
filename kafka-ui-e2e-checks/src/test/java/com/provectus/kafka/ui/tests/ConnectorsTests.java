@@ -5,10 +5,14 @@ import com.provectus.kafka.ui.extensions.FileUtils;
 import com.provectus.kafka.ui.helpers.ApiHelper;
 import com.provectus.kafka.ui.helpers.Helpers;
 import lombok.SneakyThrows;
-import org.junit.Ignore;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 @Disabled // TODO #1480
+@SuppressWarnings("squid:S2699")
 public class ConnectorsTests extends BaseTest {
 
     public static final String LOCAL = "local";
@@ -52,11 +56,10 @@ public class ConnectorsTests extends BaseTest {
         pages.openConnectorsList(LOCAL).connectorIsVisibleInList(SINK_CONNECTOR, TOPIC_FOR_CONNECTOR);
     }
 
-    //disable test due 500 error during create connector via api
     @SneakyThrows
     @DisplayName("should update a connector")
     @Test
-    @Disabled
+    @Disabled("disable test due 500 error during create connector via api")
     void updateConnector() {
         pages.openConnectorsList(LOCAL)
                 .isOnPage()
@@ -71,7 +74,7 @@ public class ConnectorsTests extends BaseTest {
     @SneakyThrows
     @DisplayName("should delete connector")
     @Test
-    @Disabled
+    @Disabled("disable test due 500 error during create connector via api")
     void deleteConnector() {
         pages.openConnectorsList(LOCAL)
                 .isOnPage()
