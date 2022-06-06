@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @Disabled // TODO #1480
-@SuppressWarnings("squid:S2699")
 public class SmokeTests extends BaseTest {
     @Test
     @SneakyThrows
